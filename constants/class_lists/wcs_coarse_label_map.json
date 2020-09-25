@@ -1,0 +1,34 @@
+{
+  "num_to_name": {
+    "1": "Urban and infrastructure",
+    "2": "Agriculture",
+    "3": "Arboreal and forestry crops",
+    "4": "Pasture",
+    "5": "Vegetation",
+    "6": "Forest",
+    "7": "Savanna",
+    "8": "Sand, rocks and bare land",
+    "9": "Unavailable",
+    "10": "Swamp",
+    "11": "Water",
+    "12": "Seasonal savanna",
+    "13": "Seasonally flooded savanna",
+    "0": "Empty of data"
+  },
+  "num_to_color": {
+    "0": "black",
+    "1": "lightgray",
+    "2": "pink",
+    "3": "teal",
+    "4": "salmon",
+    "5": "goldenrod",
+    "6": "darkseagreen",
+    "7": "gold",
+    "8": "blanchedalmond",
+    "9": "whitesmoke",
+    "10": "darkolivegreen",
+    "11": "deepskyblue",
+    "12": "khaki",
+    "13": "thistle"
+  }
+}

@@ -1,0 +1,14 @@
+0 0 0 0 255 0 - Empty of data
+1 211 211 211 255 1 - Urban and infrastructure
+2 255 192 203 255 2 - Agriculture
+3 0 128 128 255 3 - Arboreal and forestry crops
+4 250 128 114 255 4 - Pasture
+5 218 165 32 255 5 - Vegetation
+6 143 188 143 255 6 - Forest
+7 255 215 0 255 7 - Savanna
+8 255 235 205 255 8 - Sand, rocks and bare land
+9 245 245 245 255 9 - Unavailable
+10 85 107 47 255 10 - Swamp
+11 0 191 255 255 11 - Water
+12 240 230 140 255 12 - Seasonal savanna
+13 216 191 216 255 13 - Seasonally flooded savanna
