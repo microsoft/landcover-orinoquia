@@ -1,0 +1,77 @@
+{
+    "landsat_orinoquia_coarse": {
+        "metadata": {
+            "displayName": "Landsat Orinoquia Coarse-class"
+        },
+        "model": {
+            "type": "pytorch_landsat",
+            "fineTuneLayer": -1,
+            "numParameters": -1,
+            "inputShape": [
+                256,
+                256,
+                6
+            ],
+            "config_module_path": "/home/boto/wcs/pycharm/training_wcs/experiments/coarse_baseline/coarse_baseline_config_refactored.py",
+            "fn": "/home/boto/wcs/mnt/wcs-orinoquia/useful_checkpoints/wcs_coarse_baseline/wcs_coarse_baseline_epoch93_best.pth.tar"
+        },
+        "classes": [
+            {
+                "name": "Empty of data",
+                "color": "#000000"
+            },
+            {
+                "name": "Urban and infrastructure",
+                "color": "#d3d3d3"
+            },
+            {
+                "name": "Agriculture",
+                "color": "#ffc0cb"
+            },
+            {
+                "name": "Arboreal and forestry crops",
+                "color": "#008080"
+            },
+            {
+                "name": "Pasture",
+                "color": "#fa8072"
+            },
+            {
+                "name": "Vegetation",
+                "color": "#daa520"
+            },
+            {
+                "name": "Forest",
+                "color": "#8fbc8f"
+            },
+            {
+                "name": "Savanna",
+                "color": "#ffd700"
+            },
+            {
+                "name": "Sand, rocks and bare land",
+                "color": "#ffebcd"
+            },
+            {
+                "name": "Unavailable",
+                "color": "#f5f5f5"
+            },
+            {
+                "name": "Swamp",
+                "color": "#556b2f"
+            },
+            {
+                "name": "Water",
+                "color": "#00bfff"
+            },
+            {
+                "name": "Seasonal savanna",
+                "color": "#f0e68c"
+            },
+            {
+                "name": "Seasonally flooded savanna",
+                "color": "#d8bfd8"
+            }
+        ]
+    }
+}

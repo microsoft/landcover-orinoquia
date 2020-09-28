@@ -1,0 +1,38 @@
+{
+    "landsat_orinoquia": {
+        "metadata": {
+            "displayName": "Orinoquia Colombia, 2013-2014, Landsat 8",
+            "locationName": null
+        },
+        "dataLayer": {
+            "type": "CUSTOM",
+            "path": "data/imagery/wcs_orinoquia_sr_median_2013_2014_dem.vrt",
+            "padding": 0,
+            "resolution": 30
+        },
+        "basemapLayers": [
+            {
+                "layerName": "Landsat 8 2013-2014",
+                "initialZoom": 8,
+                "url": "data/basemaps/wcs_2013_2014_basemap_exp07/{z}/{x}/{y}.png",
+                "initialLocation": [4.400127, -72.304724],
+                "args": {
+                    "attribution": "Georeferenced Image",
+                    "tms": true,
+                    "maxNativeZoom": 13,
+                    "maxZoom": 16,
+                    "minZoom": 8,
+                    "bounds": [[1.4752987731256113, -67.25191674463355], [7.516203982228033, -74.96450029130249]]
+                }
+            }
+        ],
+        "shapeLayers": [
+            {
+                "shapesFn": "data/zones/Orinoquia_outline.geojson",
+                "zoneNameKey": "NAME_1",
+                "name": "Region outline"
+            }
+        ],
+        "validModels": ["landsat_orinoquia_coarse"]
+    }
+}
