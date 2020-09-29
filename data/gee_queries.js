@@ -1,3 +1,6 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT License.
+
 /* Landsat 8 Surface Reflectance imagery */
 
 // imports

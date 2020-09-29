@@ -1,3 +1,6 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
 bands_use = {
     # reference: https://landsat.gsfc.nasa.gov/landsat-8/landsat-8-bands/
     # surface reflectance product: https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C01_T1_SR

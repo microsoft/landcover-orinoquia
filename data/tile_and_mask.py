@@ -1,3 +1,12 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+"""
+Tile scenes of imagery (Landsat 8 only) and corresponding polygon labels, and create masks for the latter
+for training segmentation models. This uses the Solaris package and the conda env defined in `environment_solaris.yml`.
+
+This is the script version of the notebook `data/3_tile_and_mask.ipynb`.
+"""
+
 import argparse
 import os
 import pickle

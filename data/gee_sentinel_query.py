@@ -1,3 +1,5 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
 """
 Execute this script in QGIS to add the queried Sentinel 2 imagery as an XYZ tile to the project.
 """

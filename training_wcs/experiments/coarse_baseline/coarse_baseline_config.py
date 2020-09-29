@@ -1,3 +1,5 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
 """
 First experiment using 6 channels (2, 3, 6, 7, NDVI, elevation) with the 13 + 1 coarse categories
 mapped June 29 2020.
