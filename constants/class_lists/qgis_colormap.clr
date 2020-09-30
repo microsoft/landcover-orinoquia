@@ -1,0 +1,34 @@
+0 0 0 0 255 0 - Empty of data
+1 211 211 211 255 1 - Urban
+2 176 196 222 255 2 - Infrastructure
+3 160 82 45 255 3 - Mining
+4 230 230 250 255 4 - Other temporary crops
+5 0 128 128 255 5 - Permanent herbaceous crops
+6 255 160 122 255 6 - Other permanent shrubby crops
+7 128 128 0 255 7 - Other permanent arboreal crops
+8 250 128 114 255 8 - Intensive livestock
+9 244 164 96 255 9 - Silvopastoral livestock
+10 218 165 32 255 10 - Secondary herbaceous vegetation
+11 189 183 107 255 11 - Other agricultural areas
+12 143 188 143 255 12 - Dense forest
+13 60 179 113 255 13 - Open forest
+14 144 238 144 255 14 - Fragmented forest
+15 50 205 50 255 15 - Gallery forest
+16 210 180 140 255 16 - Forestry crops
+17 255 215 0 255 17 - Savanna
+18 255 165 0 255 18 - Shrubland
+19 255 105 180 255 19 - Secondary shrubby/arboreal vegetation
+20 255 235 205 255 20 - Sandy areas - blanchedalmond
+21 112 128 144 255 21 - Rocks
+22 188 143 143 255 22 - Degraded and bare land
+23 178 34 34 255 23 - Burnt zones
+24 176 224 230 255 24 - Glaciars and snow zones
+25 85 107 47 255 25 - Swamp
+26 30 144 255 255 26 - Rivers
+27 0 191 255 255 27 - Lakes, lagoons, and natural cienaga
+28 0 206 209 255 28 - Artificial water bodies
+29 245 245 245 255 29 - Label unavailable
+30 255 192 203 255 30 - Rice
+31 221 160 221 255 31 - Palm oil
+32 240 230 140 255 32 - Seasonal savanna
+33 216 191 216 255 33 - Seasonally flooded savanna

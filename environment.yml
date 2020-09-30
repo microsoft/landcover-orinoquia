@@ -1,0 +1,30 @@
+name: wcs
+
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+
+dependencies:
+  - python>=3.6
+  - numpy>=1.17
+  - pandas
+  - tqdm
+  - humanfriendly
+  - matplotlib
+  - nb_conda_kernels  # so we can use this env with Jupyter notebook
+  - ipykernel  # so we can use this env with Jupyter notebook
+  - geopandas
+  - rasterio>=0.3
+  - scikit-learn
+  - scikit-image
+  - pytorch>=1.0
+  - torchvision
+  - tensorflow==1.14.0
+  - tensorboard
+  - earthengine-api
+  - pip
+  - pip:
+      - azureml-sdk[tensorboard]==1.4.0
+      - azure-keyvault-secrets
+      - azure.identity

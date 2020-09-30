@@ -1,0 +1,15 @@
+{
+  "train": [
+    "wcs_orinoquia_trial_region_201301_201512_-70.279_3.203.tif",
+    "wcs_orinoquia_trial_region_201301_201512_-71.357_3.203.tif",
+    "wcs_orinoquia_trial_region_201301_201512_-70.279_4.281.tif",
+    "wcs_orinoquia_trial_region_201301_201512_-70.818_4.281.tif",
+    "wcs_orinoquia_trial_region_201301_201512_-70.279_3.742.tif",
+    "wcs_orinoquia_trial_region_201301_201512_-70.818_3.203.tif",
+    "wcs_orinoquia_trial_region_201301_201512_-70.818_3.742.tif",
+    "wcs_orinoquia_trial_region_201301_201512_-71.357_4.281.tif"
+  ],
+  "val": [
+    "wcs_orinoquia_trial_region_201301_201512_-71.357_3.742.tif"
+  ]
+}
