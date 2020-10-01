@@ -2,9 +2,26 @@
 
 In this [AI for Earth](https://www.microsoft.com/en-us/ai/ai-for-earth) project, we worked with the Wildlife Conservation Society Colombia ([WCS Colombia](https://colombia.wcs.org/en-us)) to create up-to-date land cover maps of the [Orinoquía](https://colombia.wcs.org/en-us/Wild-Places/Orinoquia.aspx) region in Colombia. This natural region encompasses a high diversity of ecosystems, from seasonally flooded savanna to rainforest. In recent years, agricultural production has expanded, causing changes in these ecosystems. It is therefore critically important to present information on land use to policy makers so that they may balance the need for agricultural development and conserving the biodiversity and ecological functions of the region.
 
-Specifically, we used a land use and land cover (LULC) map that was manually produced using satellite imagery and field data from 2010-2012 to train a semantic segmentation model for 12 land cover classes. The model can be applied to composites of Landsat 8 imagery collected in subsequent years to enable ecological analysis. 
+![Image of a river and landscape around it, taken near Sabana, Colombia](./visuals/Sabanas_Vichada_WCS.jpg)
+Landscape near Sabanas, Colombia. Photo credit Wildlife Conservation Society. 
+
+Specifically, we used a land use and land cover (LULC) map that was manually produced using satellite imagery and field data from 2011-2012 to train a semantic segmentation model for 12 land cover classes. The model can be applied to composites of Landsat 8 imagery collected in subsequent years to enable ecological analysis. 
 
 This repo contains the scripts and configuration files used to train the land cover model using a median composite of Landsat 8 images from 2013-2014. We will be evaluating the result of applying the model to 2019-2020 imagery and releasing the resulting maps in the coming months. 
+
+Category color map:
+
+![Category color map](./visuals/WCS_categories_coarse.png)
+
+
+Labels based on imagery in 2011-2012, mapped to the 12 land cover classes:
+![Labels based on imagery in 2011-2012](./visuals/2011_2012_labels_coarse_categories.png)
+
+Model predictions on validation tiles from the 2013-2014 median composite of Landsat 8 imagery:
+![Model predictions on validation tiles from the 2013-2014](./visuals/2013_2014_preds_val_coarse_baseline.png)
+
+Model prediction on 2019-2020/04 median composite, the updated land cover map:
+![Model predictions on new imagery from 2019-2020](./visuals/2019_2020_preds_coarse_baseline.png)
 
 
 ## Installation
@@ -70,7 +87,11 @@ See [Satellite data terminology](https://github.com/microsoft/ai4eutils/tree/mas
 
 ## Related repositories
 
+The interactive Land Cover Mapping tool; also see [finetuning](./finetuning).
+
 https://github.com/microsoft/landcover
+
+Collection of utilities used in this repo:
 
 https://github.com/microsoft/ai4eutils
 
