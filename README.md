@@ -16,12 +16,15 @@ Category color map:
 
 Labels based on imagery in 2011-2012, mapped to the 12 land cover classes:
 ![Labels based on imagery in 2011-2012](./visuals/2011_2012_labels_coarse_categories.png)
+Basemap © OpenStreetMap contributors
 
 Model predictions on validation tiles from the 2013-2014 median composite of Landsat 8 imagery:
 ![Model predictions on validation tiles from the 2013-2014](./visuals/2013_2014_preds_val_coarse_baseline.png)
+Basemap © OpenStreetMap contributors
 
 Model prediction on 2019-2020/04 median composite, the updated land cover map:
 ![Model predictions on new imagery from 2019-2020](./visuals/2019_2020_preds_coarse_baseline.png)
+Basemap © OpenStreetMap contributors
 
 
 ## Installation
