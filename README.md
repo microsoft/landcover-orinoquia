@@ -90,11 +90,11 @@ See [Satellite data terminology](https://github.com/microsoft/ai4eutils/tree/mas
 
 ## Related repositories
 
-The interactive Land Cover Mapping tool; also see [finetuning](./finetuning).
+The interactive Land Cover Mapping tool; also see [finetuning](./finetuning)
 
 https://github.com/microsoft/landcover
 
-Collection of utilities used in this repo:
+Collection of utilities used in this repo
 
 https://github.com/microsoft/ai4eutils
 
