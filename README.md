@@ -27,7 +27,9 @@ Model prediction on 2019-2020/04 median composite, the updated land cover map:
 Basemap © OpenStreetMap contributors
 
 
-## Installation
+## Setup
+
+### Creating the conda environment
 
 At the root directory of this repo, use `environment.yml` to create a conda virtual environment called `wcs`:
 
@@ -41,7 +43,7 @@ If you need additional packages, add them in `environment.yml` and update the en
 conda env update --name wcs --file environment.yml --prune
 ```
 
-### `ai4eutils`
+### Installing `ai4eutils`
 
 You need to add the [`ai4eutils`](https://github.com/microsoft/ai4eutils) repo to the `PYTHONPATH`, as we make use of the `geospatial` module there.
 
