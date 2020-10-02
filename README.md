@@ -71,6 +71,7 @@ There are two ways to set up Solaris:
       - humanfriendly
     ```
 
+
 Our fork of Solaris is here: https://github.com/yangsiyu007/solaris
 
 Upstream: https://github.com/CosmiQ/solaris
