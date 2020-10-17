@@ -46,6 +46,15 @@ out_dir=/home/<username>/wcs/mnt/wcs-orinoquia/delivered/20200715/results_coarse
 python training/inference.py --config_module_path training/experiments/coarse_baseline/coarse_baseline_config_refactored.py --checkpoint_path ${checkpoint_path} --out_dir ${out_dir} --output_softmax
 
 
+# Post-processing
+
+python data/postprocess_model_output.py --model_output_dir .../Data/WCSColombia/delivered/20200715/results_coarse_baseline_201920 --output_dir .../Data/WCSColombia/delivered/20200715/results_coarse_baseline_201920_polygons_filtered7 --radius 7
+
+
+# Combine output raster tiles into a .vrt
+
+gdalbuildvrt .../Data/WCSColombia/delivered/20200715/results_coarse_baseline_201920_polygons_filtered7/po_res_wcs_orinoquia_sr_median_2019_202004.vrt .../Data/WCSColombia/delivered/20200715/results_coarse_baseline_201920_polygons_filtered7/*.tif
+
 
 # Mounting blob container
 
@@ -71,5 +80,3 @@ azcopy cp "https://geospatialmldata.blob.core.windows.net/wcs-orinoquia/tiles/fu
 Elevation data:
 
 azcopy cp "https://geospatialmldata.blob.core.windows.net/wcs-orinoquia/images_srtm?SAS_KEY" /disk/wcs_data --recursive
-
-

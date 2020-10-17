@@ -14,6 +14,7 @@ dependencies:
   - matplotlib
   - nb_conda_kernels  # so we can use this env with Jupyter notebook
   - ipykernel  # so we can use this env with Jupyter notebook
+  - jupyterlab
   - geopandas
   - rasterio>=0.3
   - scikit-learn
