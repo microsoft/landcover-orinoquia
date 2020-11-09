@@ -58,7 +58,7 @@ There are two ways to set up Solaris:
 
 1. To install Solaris using their published package on PyPI, first create a conda environment called `solaris`, which will make the next pip installation step go smoothly:
     ```
-    conda create --file environment_solaris.yml
+    conda env create --file environment_solaris.yml
     pip install solaris==0.2.2
     ```
 
