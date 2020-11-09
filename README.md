@@ -82,7 +82,7 @@ Upstream: https://github.com/CosmiQ/solaris
 It seems that in our existing environment, `rasterio` is not compatible with `GDAL>=3.1`, which is required for creating Cloud Optimized GeoTIFFs (COGs). We create a separate environment for GDAL to run such commands in:
  
 ```bash
-conda create --name gdalnew --channel conda-forge python gdal==3.1.2
+conda env create --name gdalnew --channel conda-forge python gdal==3.1.2
 ```
 
 
