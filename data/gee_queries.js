@@ -136,6 +136,66 @@ Export.image.toDrive({
 });
 
 
+/*  All months 2015, 2016. Surface reflectance, median composite  */
+
+var sr_images = ee.ImageCollection((landsat_8_sr))
+    .select(['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B10', 'B11', 'pixel_qa'])
+    // Filter to get only images in the rough region outline
+    .filterBounds(full_region)
+    // Filter to get images within the first three years of Landsat 8
+    .filterDate('2015-01-01', '2016-12-31')
+    // Sort by scene cloudiness, ascending.
+    .sort('CLOUD_COVER', false)
+    // map is only available for ImageCollection; mosaic() or a composite reducer makes into an Image
+    .map(maskL8sr);
+
+print(sr_images); // we can only export Image, not ImageCollection
+
+var sr_images = sr_images.median();
+print(sr_images);
+
+Map.addLayer(sr_images, {bands: ['B4', 'B3', 'B2'], min: 0, max: 3000, gamma: 1.4}, 'L8 SR');
+
+// Export over full region
+Export.image.toDrive({
+  image: sr_images,
+  description: 'wcs_orinoquia_sr_median_2015_2016',
+  folder: 'wcs_orinoquia',
+  scale: 30,
+  region: full_region,
+  maxPixels: 651523504
+});
+
+
+/*  All months 2017, 2018. Surface reflectance, median composite  */
+
+var sr_images = ee.ImageCollection((landsat_8_sr))
+    .select(['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B10', 'B11', 'pixel_qa'])
+    // Filter to get only images in the rough region outline
+    .filterBounds(full_region)
+    // Filter to get images within the first three years of Landsat 8
+    .filterDate('2017-01-01', '2018-12-31')
+    // Sort by scene cloudiness, ascending.
+    .sort('CLOUD_COVER', false)
+    // map is only available for ImageCollection; mosaic() or a composite reducer makes into an Image
+    .map(maskL8sr);
+
+print(sr_images); // we can only export Image, not ImageCollection
+
+var sr_images = sr_images.median();
+print(sr_images);
+
+Map.addLayer(sr_images, {bands: ['B4', 'B3', 'B2'], min: 0, max: 3000, gamma: 1.4}, 'L8 SR');
+
+// Export over full region
+Export.image.toDrive({
+  image: sr_images,
+  description: 'wcs_orinoquia_sr_median_2017_2018',
+  folder: 'wcs_orinoquia',
+  scale: 30,
+  region: full_region,
+  maxPixels: 651523504
+});
 
 
 /* Elevation at 30m resolution from SRTM */
@@ -201,7 +261,6 @@ Export.image.toDrive({
 
 /* Show outlines of regions */
 
-// imports
 var trial_region =
     /* color: #d63000 */
     /* shown: false */

@@ -39,11 +39,11 @@ sh run_training_local.sh
 
 # modify selection of tiles at the top of inference.py
 
-checkpoint_path=/disk/wcs/wcs_coarse_baseline_0_wrong_val_viz/outputs/wcs_coarse_baseline/checkpoints/model_best.pth.tar
+checkpoint_path=/home/boto/wcs/mnt/wcs-orinoquia/useful_checkpoints/wcs_coarse_baseline/wcs_coarse_baseline_epoch93_best.pth.tar
 
-out_dir=/home/<username>/wcs/mnt/wcs-orinoquia/delivered/20200715/results_coarse_baseline_201920
+out_dir=/home/boto/wcs/mnt/wcs-orinoquia/delivered/20201221_timepoints/2017_2018
 
-python training/inference.py --config_module_path training/experiments/coarse_baseline/coarse_baseline_config_refactored.py --checkpoint_path ${checkpoint_path} --out_dir ${out_dir} --output_softmax
+python training_wcs/scripts/inference.py --config_module_path training_wcs/experiments/coarse_baseline/coarse_baseline_config.py --checkpoint_path ${checkpoint_path} --out_dir ${out_dir}
 
 
 # Post-processing

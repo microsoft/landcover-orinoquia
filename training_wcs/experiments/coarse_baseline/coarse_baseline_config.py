@@ -7,6 +7,7 @@ mapped June 29 2020.
 
 import os
 import sys
+from typing import Union
 
 import numpy as np
 import rasterio
@@ -315,12 +316,12 @@ def get_chip(tile_reader, chip_window, chip_for_display=True):
         return stacked
 
 
-def preprocess_tile(tile_array: np.ndarray) -> np.ndarray:
+def preprocess_tile(tile: Union[rasterio.DatasetReader, np.ndarray]) -> np.ndarray:
     """Same functionality as get_chip(), but applies to a numpy array tile of arbitrary shape.
-    Currently only used with the landcover tool.
 
     Args:
-        tile_array: A numpy array of dims (height, width, channels). Expect elevation to be the eleventh channel
+        tile: A numpy array of dims (height, width, channels) or the rasterio reader.
+        Expect elevation to be the eleventh channel
 
     Returns:
         Numpy array representing of the preprocessed chip of dims (6, height, width) - note that channels is
@@ -330,7 +331,7 @@ def preprocess_tile(tile_array: np.ndarray) -> np.ndarray:
     for b in normal_bands:
         # getting one band at a time because min, max and gamma may be different
         band = ImageryVisualizer.show_landsat8_patch(
-            tile_array,
+            tile,
             bands=[b],  # pass in a list to get the batch dimension in the results
             band_min=bands_normalization_params['min'][b],
             band_max=bands_normalization_params['max'][b],
@@ -339,16 +340,16 @@ def preprocess_tile(tile_array: np.ndarray) -> np.ndarray:
         )
         bands_to_stack.append(band)  # band is 2D (h, w), already squeezed, dtype is float 32
 
-    ndvi = ImageryVisualizer.get_landsat8_ndvi(tile_array)  # 2D, dtype is float32
+    ndvi = ImageryVisualizer.get_landsat8_ndvi(tile)  # 2D, dtype is float32
     bands_to_stack.append(ndvi)
 
     # for the interactive tool, elevation is band 11 (1-indexed) or 10 (0-indexed), and already normalized
     # by elevation_standardization_params (could have done the normalization here too)
-    elevation = tile_array[:, :, 10]
+    elevation = tile[:, :, 10]
     bands_to_stack.append(elevation)
 
     stacked = np.stack(bands_to_stack)
 
     assert stacked.shape == (
-    6, tile_array.shape[0], tile_array.shape[1]), f'preprocess_tile, wrong shape: {stacked.shape}'
+        6, tile.shape[0], tile.shape[1]), f'preprocess_tile, wrong shape: {stacked.shape}'
     return stacked
