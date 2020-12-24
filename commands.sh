@@ -80,3 +80,13 @@ azcopy cp "https://geospatialmldata.blob.core.windows.net/wcs-orinoquia/tiles/fu
 Elevation data:
 
 azcopy cp "https://geospatialmldata.blob.core.windows.net/wcs-orinoquia/images_srtm?SAS_KEY" /disk/wcs_data --recursive
+
+
+# Rasterize polygons of corrected labels
+
+# The corrected windows still uses "model_pred" as the field with the category information
+# Pixel Size = (0.000269494585236,-0.000269494585236) read from previous rasters
+gdal_rasterize -a model_pred -a_nodata 0 -ot Byte -tr 0.000269494585236 0.000269494585236 -co COMPRESS=LZW /Users/siyuyang/Data/WCSColombia/provided_labels/Landuse_corrections_Felipe/Results_Corrected/WINDOW_ID_1.shp /Users/siyuyang/Data/WCSColombia/provided_labels/Landuse_corrections_Felipe/results_corrected_raster/window_1.tif
+
+
+
