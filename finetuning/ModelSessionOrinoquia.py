@@ -107,7 +107,7 @@ class TorchFineTuningOrinoquia(ModelSession):
 
         # form batches
         batch_size = self.config.batch_size if self.config.batch_size is not None else 32
-        batch = []
+        batches = []
         batch_indices = []  # cache these to save recalculating when filling in model predictions
 
         chip_size = self.config.chip_size
@@ -133,21 +133,21 @@ class TorchFineTuningOrinoquia(ModelSession):
                 sat_mask = chip[0].squeeze() > 0.0  # mask out DEM data where there's no satellite data
                 chip = chip * sat_mask
 
-                batch.append(chip)
+                batches.append(chip)
 
                 valid_row_end = row_start + min(prediction_window_size, height - row_idx * prediction_window_size)
                 valid_col_end = col_start + min(prediction_window_size, width - col_idx * prediction_window_size)
                 batch_indices.append(
                     (row_start, valid_row_end, col_start, valid_col_end))  # explicit to be less confusing
-        batch = np.array(batch)  # (num_chips, channels, height, width)
+        batches = np.array(batches)  # (num_chips, channels, height, width)
 
         # score chips in batches
         model_output = []
         model_features = []  # same spatial dims as model_output, but has 64 or 32 channels
         self.model.eval()
         with torch.no_grad():
-            for i in range(0, len(batch), batch_size):
-                t_batch = batch[i:i + batch_size]
+            for i in range(0, len(batches), batch_size):
+                t_batch = batches[i:i + batch_size]
                 t_batch = torch.from_numpy(t_batch).to(self.device)
 
                 scores, features = self.model.forward(t_batch,

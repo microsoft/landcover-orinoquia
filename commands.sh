@@ -39,11 +39,11 @@ sh run_training_local.sh
 
 # modify selection of tiles at the top of inference.py
 
-checkpoint_path=/disk/wcs/wcs_coarse_baseline_0_wrong_val_viz/outputs/wcs_coarse_baseline/checkpoints/model_best.pth.tar
+checkpoint_path=/home/boto/wcs/mnt/wcs-orinoquia/useful_checkpoints/wcs_coarse_baseline/wcs_coarse_baseline_epoch93_best.pth.tar
 
-out_dir=/home/<username>/wcs/mnt/wcs-orinoquia/delivered/20200715/results_coarse_baseline_201920
+out_dir=/home/boto/wcs/mnt/wcs-orinoquia/delivered/20201221_timepoints/2017_2018
 
-python training/inference.py --config_module_path training/experiments/coarse_baseline/coarse_baseline_config_refactored.py --checkpoint_path ${checkpoint_path} --out_dir ${out_dir} --output_softmax
+python training_wcs/scripts/inference.py --config_module_path training_wcs/experiments/coarse_baseline/coarse_baseline_config.py --checkpoint_path ${checkpoint_path} --out_dir ${out_dir}
 
 
 # Post-processing
@@ -80,3 +80,13 @@ azcopy cp "https://geospatialmldata.blob.core.windows.net/wcs-orinoquia/tiles/fu
 Elevation data:
 
 azcopy cp "https://geospatialmldata.blob.core.windows.net/wcs-orinoquia/images_srtm?SAS_KEY" /disk/wcs_data --recursive
+
+
+# Rasterize polygons of corrected labels
+
+# The corrected windows still uses "model_pred" as the field with the category information
+# Pixel Size = (0.000269494585236,-0.000269494585236) read from previous rasters
+gdal_rasterize -a model_pred -a_nodata 0 -ot Byte -tr 0.000269494585236 0.000269494585236 -co COMPRESS=LZW /Users/siyuyang/Data/WCSColombia/provided_labels/Landuse_corrections_Felipe/Results_Corrected/WINDOW_ID_1.shp /Users/siyuyang/Data/WCSColombia/provided_labels/Landuse_corrections_Felipe/results_corrected_raster/window_1.tif
+
+
+
